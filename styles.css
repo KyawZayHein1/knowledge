@@ -3,9 +3,9 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  }
-  
-  .sub-tab button {
+}
+
+.sub-tab button {
     margin: 0 10px;
     padding: 10px 20px;
     background-color: #333333;
@@ -14,57 +14,70 @@
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  
-  .sub-tab button:hover {
+}
+
+.sub-tab button:hover {
     background-color: #f5c518;
     color: #121212;
-  }
-  
-  /* Filter Controls */
-  .filter-controls {
+}
+
+/* Button Group for Group A, B, C */
+.button-group {
     display: flex;
     justify-content: center;
-    gap: 15px;
     margin-bottom: 20px;
-  }
-  
-  .filter-controls label,
-  .filter-controls select {
-    font-size: 1rem;
-    color: #e0e0e0;
-  }
-  
-  .filter-controls select {
-    padding: 5px 10px;
+}
+
+.button-group button {
+    margin: 0 15px;
+    padding: 12px 25px;
     background-color: #333333;
     color: #f5c518;
     border: none;
-    border-radius: 5px;
-  }
-  
-  /* Schedule Table */
-  #schedule-table {
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #f5c518;
+    color: #121212;
+}
+
+/* Schedule Table */
+#schedule-table {
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
     background-color: #1f1f1f;
     color: #e0e0e0;
-  }
-  
-  #schedule-table th,
-  #schedule-table td {
+}
+
+#schedule-table th,
+#schedule-table td {
     border: 1px solid #333333;
     padding: 10px;
     text-align: center;
-  }
-  
-  #schedule-table th {
+}
+
+#schedule-table th {
     background-color: #333333;
     color: #f5c518;
-  }
-  
-  #schedule-table tbody tr:hover {
+}
+
+#schedule-table tbody tr:hover {
     background-color: #2a2a2a;
-  }
-  
+}
+
+/* Status Display */
+#status-display {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f5c518;
+}
+
+#electricity-status,
+#time-left {
+    margin-top: 10px;
+}
