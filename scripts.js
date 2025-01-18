@@ -1,10 +1,8 @@
-// JavaScript Code
-
 document.addEventListener("DOMContentLoaded", () => {
   const contentSections = document.querySelectorAll(".content-section");
   const subContents = document.querySelectorAll(".sub-content");
-  const groupButtons = document.querySelectorAll(".group-buttons button");
-  const scheduleDisplay = document.getElementById("schedule-display");
+  const groupButtons = document.querySelectorAll(".button-group button");
+  const statusDisplay = document.getElementById("status-display");
 
   // Function to show main content
   window.showContent = (id) => {
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const { status, timeLeft } = scheduleData[group];
-    scheduleDisplay.innerHTML = `
+    statusDisplay.innerHTML = `
       <h4>Group ${group}</h4>
       <p>Electricity is currently: <strong>${status}</strong></p>
       <p>Time left: <strong>${timeLeft}</strong></p>
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach event listeners to group buttons
   groupButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const group = button.textContent.trim().split(" ")[1];
+      const group = button.getAttribute("data-group"); // Use data-* attribute for robustness
       updateSchedule(group);
     });
   });
