@@ -1,45 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const tableData = [
-    { region: 'North', day: 'Monday', on: '6:00 AM', off: '10:00 AM' },
-    { region: 'South', day: 'Monday', on: '10:00 AM', off: '2:00 PM' },
-    { region: 'East', day: 'Tuesday', on: '8:00 AM', off: '12:00 PM' },
-    { region: 'West', day: 'Wednesday', on: '7:00 AM', off: '11:00 AM' },
-    // Add more data as needed
-  ];
+// JavaScript Code
 
-  const regionFilter = document.getElementById('region');
-  const dayFilter = document.getElementById('day');
-  const scheduleTableBody = document.querySelector('#schedule-table tbody');
+document.addEventListener("DOMContentLoaded", () => {
+  const contentSections = document.querySelectorAll(".content-section");
+  const subContents = document.querySelectorAll(".sub-content");
+  const groupButtons = document.querySelectorAll(".group-buttons button");
+  const scheduleDisplay = document.getElementById("schedule-display");
 
-  function renderTable(data) {
-    scheduleTableBody.innerHTML = '';
-    data.forEach((entry) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${entry.region}</td>
-        <td>${entry.day}</td>
-        <td>${entry.on}</td>
-        <td>${entry.off}</td>
-      `;
-      scheduleTableBody.appendChild(row);
+  // Function to show main content
+  window.showContent = (id) => {
+    contentSections.forEach((section) => {
+      section.classList.remove("active");
     });
-  }
+    document.getElementById(id).classList.add("active");
+  };
 
-  function filterTable() {
-    const regionValue = regionFilter.value;
-    const dayValue = dayFilter.value;
-    const filteredData = tableData.filter((entry) => {
-      return (
-        (regionValue === 'all' || entry.region.toLowerCase() === regionValue) &&
-        (dayValue === 'all' || entry.day.toLowerCase() === dayValue)
-      );
+  // Function to show sub-content
+  window.showSubContent = (id) => {
+    subContents.forEach((content) => {
+      content.classList.remove("active");
     });
-    renderTable(filteredData);
-  }
+    document.getElementById(id).classList.add("active");
+  };
 
-  regionFilter.addEventListener('change', filterTable);
-  dayFilter.addEventListener('change', filterTable);
+  // Function to update electricity schedule
+  const updateSchedule = (group) => {
+    const scheduleData = {
+      A: { status: "On", timeLeft: "2 hours" },
+      B: { status: "Off", timeLeft: "1 hour" },
+      C: { status: "On", timeLeft: "3 hours" },
+    };
 
-  // Initial render
-  renderTable(tableData);
+    const { status, timeLeft } = scheduleData[group];
+    scheduleDisplay.innerHTML = `
+      <h4>Group ${group}</h4>
+      <p>Electricity is currently: <strong>${status}</strong></p>
+      <p>Time left: <strong>${timeLeft}</strong></p>
+    `;
+  };
+
+  // Attach event listeners to group buttons
+  groupButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const group = button.textContent.trim().split(" ")[1];
+      updateSchedule(group);
+    });
+  });
+
+  // Initialize with Group A
+  updateSchedule("A");
 });
