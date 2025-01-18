@@ -19,24 +19,36 @@
     </nav>
   </header>
   <main>
+    <!-- Welcome Section -->
     <section id="home">
       <h2>Welcome to the Knowledge Hub</h2>
-      <p>Explore, Learn, and Share Knowledge!</p>
+      <p>Explore a world of knowledge, gain insights, and share your expertise!</p>
+      <p><strong>Milestone:</strong> Over 1M reads and views!</p>
+      <p>Choose a category to start exploring:</p>
+      <div class="category-buttons">
+        <button onclick="showCategory('Technology')">Technology Updates</button>
+        <button onclick="showCategory('Telecommunications')">Telecommunications Insights</button>
+        <button onclick="showCategory('Learning')">Learning Resources</button>
+        <button onclick="showCategory('History')">History</button>
+        <button onclick="showCategory('Community')">Community Forum</button>
+      </div>
     </section>
+
+    <!-- Dynamic Category Section -->
     <section id="categories">
-      <h2>Categories</h2>
-      <ul>
-        <li>Technology Updates</li>
-        <li>Telecommunications Insights</li>
-        <li>Learning Resources</li>
-        <li>Personal Portfolio</li>
-        <li>Community Forum</li>
-      </ul>
+      <h2>Category: <span id="selected-category">Select a category</span></h2>
+      <div id="category-content">
+        <p>Select a category above to view content.</p>
+      </div>
     </section>
+
+    <!-- About Section -->
     <section id="about">
       <h2>About Us</h2>
       <p>This platform aims to share valuable information with the community.</p>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: contact@example.com</p>
