@@ -1,13 +1,40 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
   }
   
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2, h3 {
+    color: #f5c518; /* Gold color for headings */
+  }
+  
+  p {
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Header */
   header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #1f1f1f; /* Dark grey */
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   }
   
   header nav {
@@ -16,22 +43,37 @@ body {
     align-items: center;
   }
   
+  header nav h1 a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f5c518;
+  }
+  
   header nav ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
   }
   
   header nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
   }
   
   header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #333333; /* Grey tab */
+    border-radius: 50px; /* Oval shape */
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
+  header nav ul li a:hover {
+    background-color: #f5c518; /* Gold hover effect */
+    color: #121212; /* Dark text on hover */
+    transform: scale(1.1);
+  }
+  
+  /* Main Content */
   main {
     padding: 20px;
   }
@@ -44,25 +86,42 @@ body {
     margin: 5px;
     padding: 10px 15px;
     border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
+    border-radius: 50px; /* Oval shape */
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .category-buttons button:hover {
-    background-color: #0056b3;
+    background-color: #f5c518;
+    color: #121212;
+    transform: scale(1.05);
   }
   
   #category-content {
     margin-top: 20px;
   }
   
+  /* Footer */
   footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
     text-align: center;
     padding: 10px 0;
     position: relative;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header nav ul {
+      flex-wrap: wrap;
+    }
+  
+    header nav ul li {
+      margin: 5px 0;
+    }
   }
   
