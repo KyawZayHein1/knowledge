@@ -40,6 +40,24 @@ body {
     margin-bottom: 40px;
   }
   
+  .category-buttons button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .category-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  #category-content {
+    margin-top: 20px;
+  }
+  
   footer {
     background-color: #333;
     color: #fff;
