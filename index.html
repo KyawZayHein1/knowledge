@@ -3,60 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knowledge Sharing Platform</title>
+  <title>Information and Knowledge Hub</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
+    <h1>Information and Knowledge Hub</h1>
     <nav>
-      <h1><a href="#">Knowledge Hub</a></h1>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="showContent('welcome')">Welcome</a></li>
+        <li><a href="#" onclick="showContent('ww2')">World War II</a></li>
+        <li><a href="#" onclick="showContent('technology')">Technology Updates</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <!-- Welcome Section -->
-    <section id="home">
-      <h2>Welcome to the Knowledge Hub</h2>
-      <p>Explore a world of knowledge, gain insights, and share your expertise!</p>
-      <p><strong>Milestone:</strong> Over 1M reads and views!</p>
-      <p>Choose a category to start exploring:</p>
-      <div class="category-buttons">
-        <button onclick="showCategory('Technology')">Technology Updates</button>
-        <button onclick="showCategory('Telecommunications')">Telecommunications Insights</button>
-        <button onclick="showCategory('Learning')">Learning Resources</button>
-        <button onclick="showCategory('History')">History</button>
-        <button onclick="showCategory('Community')">Community Forum</button>
-      </div>
+    <section id="welcome" class="content-section active">
+      <h2>Welcome</h2>
+      <p>Welcome to our platform where knowledge meets accessibility.</p>
+      <p>Our articles are concise (~1 minute read) and engaging, ensuring a great experience for all.</p>
     </section>
-
-    <!-- Dynamic Category Section -->
-    <section id="categories">
-      <h2>Category: <span id="selected-category">Select a category</span></h2>
-      <div id="category-content">
-        <p>Select a category above to view content.</p>
-      </div>
+    <section id="ww2" class="content-section">
+      <h2>World War II: A Brief Overview</h2>
+      <p>World War II, also known as the Second World War, was the largest and deadliest conflict in human history...</p>
     </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Us</h2>
-      <p>This platform aims to share valuable information with the community.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: contact@example.com</p>
+    <section id="technology" class="content-section">
+      <h2>Technology Updates - January 2025</h2>
+      <article>
+        <h3>Floating Solar Panels: A New Energy Frontier</h3>
+        <p>A recent study reveals floating solar panels on reservoirs could power 100 million homes...</p>
+      </article>
+      <article>
+        <h3>Electricity Schedule - January 2025</h3>
+        <div class="filter-controls">
+          <label for="date-filter">Filter by Date:</label>
+          <select id="date-filter">
+            <option value="all">All Dates</option>
+          </select>
+          <label for="group-filter">Filter by Group:</label>
+          <select id="group-filter">
+            <option value="all">All Groups</option>
+            <option value="A">Group A</option>
+            <option value="B">Group B</option>
+            <option value="C">Group C</option>
+          </select>
+        </div>
+        <table id="schedule-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>05:00-09:00</th>
+              <th>09:00-13:00</th>
+              <th>13:00-17:00</th>
+              <th>17:00-21:00</th>
+              <th>21:00-01:00</th>
+              <th>01:00-05:00</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Knowledge Hub</p>
-  </footer>
   <script src="scripts.js"></script>
 </body>
 </html>
